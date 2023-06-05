@@ -4,7 +4,7 @@ CLIENT = client
 
 SERVER = server
 
-LIBFT = libft.a
+LIBFT = libft/libft.a
 
 SRC_CLIENT = client.c
 
@@ -31,7 +31,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME) $(CLIENT) $(SERVER)
-	rm -f libft/$(LIBFT)
+	rm -f $(LIBFT)
 
 %.o: %.c
 	cc $(WWW)  -g -c -o  $@ $^

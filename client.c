@@ -24,7 +24,7 @@ static void	str_to_bits(int pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		i++;
-		usleep(100);
+		usleep(400);
 	}
 }
 
@@ -40,7 +40,7 @@ static void	len_to_bits(int pid, int len)
 		else
 			kill(pid, SIGUSR2);
 		i++;
-		usleep(100);
+		usleep(400);
 	}
 }
 
@@ -51,8 +51,11 @@ int	main(int argc, char **argv)
 
 	argc += 1;
 	pid = ft_atoi(argv[1]);
+	if (pid <= 0)
+		exit (1);
 	str_to_send = argv[2];
 	len_to_bits(pid, ft_strlen(str_to_send));
-	while (str_to_send != '\0')
+	while (*str_to_send != '\0')
 		str_to_bits(pid, *str_to_send++);
+	return (0);
 }
