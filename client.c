@@ -49,7 +49,8 @@ int	main(int argc, char **argv)
 	int		pid;
 	char	*str_to_send;
 
-	argc += 1;
+	if (argc < 3)
+		return (0);
 	pid = ft_atoi(argv[1]);
 	if (pid <= 0)
 		exit (1);
