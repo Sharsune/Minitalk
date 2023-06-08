@@ -36,7 +36,7 @@ static int	make_string(t_vars *vars)
 		str = malloc(sizeof(char) * vars->len + 1);
 	if (!str)
 		return (-1);
-	str[vars->len + 1] = '\0';
+	str[vars->len] = '\0';
 	if (vars->byte_count <= vars->len)
 		str[vars->byte_count] = vars->c;
 	if (vars->byte_count == vars->len - 1)

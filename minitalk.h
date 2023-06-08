@@ -24,4 +24,5 @@ typedef struct s_vars
 	int	byte_count;
 	int	check;
 }	t_vars;
+
 #endif
